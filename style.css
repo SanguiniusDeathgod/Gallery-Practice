@@ -1,0 +1,158 @@
+body {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  color: white;
+  background-color: black;
+  box-sizing: border-box;
+}
+
+#display img {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+button {
+  border: 1px solid rgba(255, 255, 255, 0.934);
+  border-radius: 100%;
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.934);
+  padding: 6px 10px;
+  z-index: 100;
+  cursor: pointer;
+}
+
+button#next {
+  position: absolute;
+  top: 50vh;
+  right: 5vw;
+}
+
+button#prev {
+  position: absolute;
+  top: 50vh;
+  left: 5vw;
+}
+
+.Mini-image {
+  width: 70px;
+  height: 50px;
+  padding: 2px;
+  cursor: pointer;
+}
+
+.MiniGallery {
+  height: 60px;
+  width: auto;
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  background-color: transparent;
+  top: 3vh;
+  left: 50%; /* Set left to 50% of the parent element */
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 4px;
+  backdrop-filter: blur(200px);
+  transform: translateX(
+    -50%
+  ); /* Shift the element left by 50% of its own width */
+  overflow: scroll;
+}
+
+.description-container {
+  position: absolute;
+  height: 50vh;
+  width: 20vw;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+}
+
+.MiniContainerHideButton {
+  top: 13vh;
+  width: auto;
+  padding: 0px 7px 1px 7px;
+  height: auto;
+  transition: bottom 0.4s;
+}
+
+.MiniContainerHideButton-MinisHidden {
+  top: 8vh;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+/* For desktop */
+@media (width >= 600px) {
+  .description-container {
+    height: 80px;
+    width: 500px;
+    position: absolute;
+  }
+  .MiniGallery {
+    /* desperate times, if we flex it to row it flexes off the screen, so the first image is cut off. sorry. */
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 90px;
+    width: 400px;
+    position: absolute;
+    bottom: 3vh;
+    top: auto;
+    overflow: scroll;
+  }
+
+  .Mini-image {
+    width: 110px;
+    height: 75px;
+    padding: 1px;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  /* If your browser doesn't have a useragent style for this, you should add it. */
+  /* .thumb-image:focus{
+       border: 2px solid white
+    } */
+  .MiniContainerHideButton {
+    bottom: 17vh;
+    top: auto;
+    width: auto;
+    padding: 0px 7px 1px 7px;
+    transition: top 0.4s;
+    height: auto;
+    content: "↓";
+  }
+
+  .MiniContainerHideButton-MinisHidden {
+    bottom: 4vh;
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+}
