@@ -1,7 +1,7 @@
 const images = [
   {
-    image: `/images/Titan-Legions-2.jpg`,
-    Mini: `/images/Titan-Legions-2.jpg`,
+    image: `images/Titan-Legions-2.jpg`,
+    Mini: `images/Titan-Legions-2.jpg`,
     alt: `This illustration by Geoff Taylor, was originally used on White Dwarf 179 &181 Titan Legions`,
   },
   {
