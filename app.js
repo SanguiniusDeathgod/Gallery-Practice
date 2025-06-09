@@ -1,7 +1,7 @@
 const images = [
   {
-    image: `/images/Titan-Legions-2.jpg`,
-    Mini: `/images/Titan-Legions-2.jpg`,
+    image: `images/Titan-Legions-2.jpg`,
+    Mini: `images/Titan-Legions-2.jpg`,
     alt: `This illustration by Geoff Taylor, was originally used on White Dwarf 179 &181 Titan Legions`,
   },
   {
@@ -73,11 +73,9 @@ function updateScrollBar(currentImage) {
   });
 
   if (activeMini) {
-    // getBoundingClientRect returns a fancy object that tells us where our elements are on the page.
     const MiniRect = activeMini.getBoundingClientRect();
     const containerRect = MiniGallery.getBoundingClientRect();
 
-    // Calculate the position to scroll to, centering the active Mini. I found this online!
     let scrollLeftPos =
       activeMini.offsetLeft + MiniRect.width / 2 - containerRect.width / 2;
 
